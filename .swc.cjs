@@ -1,0 +1,8 @@
+module.exports = {
+  '$schema': 'https://json.schemastore.org/swcrc',
+  'jsc': {
+    'experimental': {
+      'plugins': ['@effector/swc-plugin'],
+    },
+  },
+};
