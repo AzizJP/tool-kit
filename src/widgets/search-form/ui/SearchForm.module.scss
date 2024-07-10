@@ -1,0 +1,12 @@
+.root {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+
+  width: 100%;
+  max-width: 768px;
+
+  background-color: var(--background-form);
+  border: 1px var(--border-form);
+  border-radius: 2rem;
+}

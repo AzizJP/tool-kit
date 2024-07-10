@@ -1,10 +1,19 @@
-:root {
-  font-family: Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import 'breakpoints.scss';
 
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+:root {
+  --gray-100: #ececec;
+  --gray-500: #9b9b9b;
+  --gray-600: #676767;
+  --gray-700: #424242;
+  --gray-800: #212121;
+  --transition-time: 0.4s;
+
+  --text-primary: var(--gray-100);
+  --text-input: var(--gray-500);
+  --background-primary: var(--gray-800);
+
+  --background-form: var(--gray-700);
+  --border-form: var(--gray-600);
 }
 
 * {
@@ -13,8 +22,15 @@
 }
 
 body {
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
   min-width: 320px;
   min-height: 100vh;
+
+  color: var(--text-primary);
+  background-color: var(--background-primary);
 }
 
 a {

@@ -10,9 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@apollo/client": "^3.10.8",
     "effector": "^23.2.2",
     "effector-logger": "^0.15.0",
     "effector-react": "^23.2.1",
+    "graphql": "^16.9.0",
+    "lodash": "^4.17.21",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.24.1"
@@ -22,6 +25,7 @@
     "@effector/swc-plugin": "^0.0.10",
     "@feature-sliced/eslint-config": "^0.1.1",
     "@swc/core": "^1.6.13",
+    "@types/lodash": "^4.17.6",
     "@types/node": "^20.14.10",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
