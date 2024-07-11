@@ -1,3 +1,1 @@
-import SearchForm from './SearchForm.tsx';
-
-export { SearchForm };
+export { SearchForm } from './SearchForm';

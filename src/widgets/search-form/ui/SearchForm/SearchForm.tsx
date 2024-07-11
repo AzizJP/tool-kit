@@ -1,7 +1,8 @@
 import { FC } from 'react';
 
 import styles from './SearchForm.module.scss';
-import { SearchInput } from './SearchInput';
+
+import { SearchInput } from '@/features/search';
 
 const SearchForm: FC = () => {
   return (

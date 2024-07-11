@@ -12,11 +12,7 @@ interface ButtonProps {
 
 const Button: FC<ButtonProps> = ({ children, handleClick, disabled = false, theme = 'transparent', className }) => {
   return (
-    <button
-      className={`${styles.root} ${styles[theme]} ${className ? styles[className] : ''}`}
-      onClick={handleClick}
-      disabled={disabled}
-    >
+    <button className={`${styles.root} ${styles[theme]} ${className ? styles[className] : ''}`} onClick={handleClick} disabled={disabled}>
       {children}
     </button>
   );
