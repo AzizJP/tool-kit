@@ -17,3 +17,11 @@
     color: var(--text-input);
   }
 }
+
+.title {
+  width: 16rem;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}

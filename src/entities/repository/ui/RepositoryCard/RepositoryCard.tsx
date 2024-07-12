@@ -16,7 +16,7 @@ const RepositoryCard: FC<RepositoryCardProps> = ({ card }) => {
 
   return (
     <article onClick={handleClick} className={styles.root}>
-      <h3>{name}</h3>
+      <h3 className={styles.title}>{name}</h3>
       <p>{`Последний коммит: ${dayjs(committedDate).format('DD/MM/YYYY HH:mm')}`}</p>
       <span>{`⭐ ${stargazerCount}`}</span>
       <Link

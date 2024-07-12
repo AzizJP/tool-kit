@@ -18,7 +18,7 @@ export const GET_REPOSITORIY = gql`
           login
           url
         }
-        languages(first: 10) {
+        languages(first: 5) {
           edges {
             node {
               name

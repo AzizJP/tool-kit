@@ -14,16 +14,22 @@ export const useUserRepositories = () => {
     variables: { first: SEARCH_REPOSITORIES_COUNT },
   });
 
-  const searchUserRepositories = useCallback(() => {
-    searchRepositories();
-  }, [searchRepositories]);
+  const searchUserRepositories = useCallback(
+    (endCursor: string = '') => {
+      searchRepositories({ variables: { after: endCursor } });
+    },
+    [searchRepositories],
+  );
 
   let result = data ? data.viewer.repositories.edges.map(edge => edge.node) : [];
+
   const totalCount = data ? data.viewer.repositories.totalCount : 0;
   const userRepositoryCount = setMaxRepositories(MAX_REPOSITORIES, totalCount);
+  const hasNextPage = data ? data.viewer.repositories.pageInfo.hasNextPage : false;
+  const endCursor = data ? data.viewer.repositories.pageInfo.endCursor : '';
 
   const pageNumber = Number(getQueryParam(PAGE_KEY)) || 1;
   result = result.slice((pageNumber - 1) * NUMBER_OF_REPOSITORIES, pageNumber * NUMBER_OF_REPOSITORIES);
 
-  return { searchUserRepositories, result, loading, error, userRepositoryCount };
+  return { searchUserRepositories, result, loading, error, userRepositoryCount, hasNextPage, endCursor };
 };

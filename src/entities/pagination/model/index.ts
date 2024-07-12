@@ -1,1 +1,1 @@
-export { setPaginationCount, $paginationCount, $currentPage, setCurrentPage } from './store';
+export * from './store';
