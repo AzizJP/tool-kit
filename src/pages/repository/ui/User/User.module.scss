@@ -1,0 +1,21 @@
+.root {
+  display: flex;
+  gap: 10px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.imageWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  border-radius: 50%;
+}

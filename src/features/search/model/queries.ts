@@ -9,8 +9,15 @@ export const SEARCH_REPOSITORIES = gql`
             id
             name
             stargazerCount
-            pushedAt
+            defaultBranchRef {
+              target {
+                ... on Commit {
+                  committedDate
+                }
+              }
+            }
             url
+            isEmpty
           }
         }
       }
@@ -28,14 +35,21 @@ export const SEARCH_REPOSITORIES = gql`
 export const GET_USER_REPOSITORIES = gql`
   query GetUserRepositories($after: String) {
     viewer {
-      repositories(first: 10, after: $after) {
+      repositories(last: 10, after: $after, privacy: PUBLIC) {
         edges {
           node {
             id
             name
             stargazerCount
-            pushedAt
+            defaultBranchRef {
+              target {
+                ... on Commit {
+                  committedDate
+                }
+              }
+            }
             url
+            isEmpty
           }
         }
         pageInfo {

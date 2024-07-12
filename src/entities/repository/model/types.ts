@@ -2,8 +2,13 @@ export interface Repository {
   id: string;
   name: string;
   stargazerCount: number;
-  pushedAt: string;
+  defaultBranchRef: {
+    target: {
+      committedDate: string;
+    };
+  };
   url: string;
+  isEmpty: boolean;
 }
 
 export interface RepositoryCardProps {

@@ -14,7 +14,7 @@ export const useUserRepositories = () => {
     searchRepositories();
   }, [searchRepositories]);
 
-  const result = data ? data.viewer.repositories.edges.map(edge => edge.node) : [];
+  const result = data ? data.viewer.repositories.edges.map(edge => edge.node).filter(({ isEmpty }) => !isEmpty) : [];
   const totalCount = data ? data.viewer.repositories.totalCount : 0;
   const userRepositoryCount = setMaxRepositories(MAX_REPOSITORIES, totalCount);
 

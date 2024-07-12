@@ -1,0 +1,23 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.starsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.language {
+  padding: 5px;
+  border-radius: 15px;
+  background-color: var(--background-language);
+}

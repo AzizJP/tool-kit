@@ -19,7 +19,7 @@ export const useAllRepositories = () => {
     [searchRepositories, addQueryParam],
   );
 
-  const result = data ? data.search.edges.map(edge => edge.node) : [];
+  const result = data ? data.search.edges.map(edge => edge.node).filter(({ isEmpty }) => !isEmpty) : [];
   const totalCount = data ? data.search.repositoryCount : 0;
   const allRepositoryCount = setMaxRepositories(MAX_REPOSITORIES, totalCount);
 
