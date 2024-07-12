@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.10.8",
+    "dayjs": "^1.11.11",
     "effector": "^23.2.2",
     "effector-logger": "^0.15.0",
     "effector-react": "^23.2.1",

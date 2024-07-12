@@ -5,3 +5,7 @@ export interface Repository {
   pushedAt: string;
   url: string;
 }
+
+export interface RepositoryCardProps {
+  card: Repository;
+}

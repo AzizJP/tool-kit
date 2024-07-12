@@ -5,7 +5,9 @@
   --gray-500: #9b9b9b;
   --gray-600: #676767;
   --gray-700: #424242;
+  --gray-750: #2f2f2f;
   --gray-800: #212121;
+
   --color-pagination: #302a53;
   --color-pagination-active: #766ac8;
 
@@ -17,6 +19,9 @@
 
   --background-form: var(--gray-700);
   --border-form: var(--gray-600);
+
+  --background-card: var(--gray-700);
+  --border-card: var(--gray-600);
 }
 
 * {

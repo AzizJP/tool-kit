@@ -1,2 +1,2 @@
-export type { Repository } from './types';
-export { setRepositories, $repositories } from './store';
+export * from './types';
+export * from './store';

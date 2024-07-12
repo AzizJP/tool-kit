@@ -1,0 +1,19 @@
+.root {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: max-content;
+  gap: 5px;
+
+  padding: 10px;
+  background-color: var(--background-card);
+  border: 1px solid var(--border-card);
+  border-radius: 15px;
+
+  cursor: pointer;
+
+  p {
+    color: var(--text-input);
+  }
+}
