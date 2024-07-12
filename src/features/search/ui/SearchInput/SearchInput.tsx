@@ -32,8 +32,8 @@ const SearchInput: FC = () => {
 
   useEffect(() => {
     if (!inputValue) return searchUserRepositories();
-    searchAllRepositories(inputValue);
-  }, [inputValue, searchAllRepositories, searchUserRepositories]);
+    postponeSearch(inputValue);
+  }, [inputValue, postponeSearch, searchUserRepositories]);
 
   useEffect(() => {
     if (inputValue && allRepositories.length) {

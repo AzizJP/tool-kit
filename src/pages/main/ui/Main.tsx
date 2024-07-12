@@ -10,8 +10,8 @@ const Main: FC = () => {
   return (
     <section className={styles.root}>
       <SearchForm />
-      <Pagination />
       <RepositoryList />
+      <Pagination />
     </section>
   );
 };
