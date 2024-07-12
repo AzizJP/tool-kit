@@ -20,6 +20,7 @@ export interface RepositoryPageType {
       }[];
     };
     description: string;
+    isEmpty: boolean;
   };
 }
 
@@ -31,4 +32,5 @@ export interface RepositoryInfoProps {
   committedDate: string;
   languages: RepositoryPageType['node']['languages'];
   description: string;
+  isEmpty: boolean;
 }

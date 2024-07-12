@@ -18,16 +18,17 @@ const Repository: FC = () => {
 
   if (!repositoryInfo) return;
 
-  const { name, stargazerCount, defaultBranchRef, owner, languages, description } = repositoryInfo;
+  const { name, stargazerCount, defaultBranchRef, owner, languages, description, isEmpty } = repositoryInfo;
 
   return (
     <div className={styles.root}>
       <RepositoryInfo
         name={name}
         stars={stargazerCount}
-        committedDate={defaultBranchRef.target.committedDate}
+        committedDate={defaultBranchRef?.target?.committedDate}
         languages={languages}
         description={description}
+        isEmpty={isEmpty}
       />
       <User login={owner.login} avatarUrl={owner.avatarUrl} url={owner.url} />
     </div>

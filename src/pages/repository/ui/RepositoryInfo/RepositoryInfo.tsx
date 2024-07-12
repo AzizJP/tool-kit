@@ -1,16 +1,20 @@
 import dayjs from 'dayjs';
 import { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { RepositoryInfoProps } from '../../model';
 
 import styles from './RepositoryInfo.module.scss';
 
-const RepositoryInfo: FC<RepositoryInfoProps> = ({ name, stars, committedDate, languages, description }) => {
+import { Button } from '@/shared/ui/Button';
+
+const RepositoryInfo: FC<RepositoryInfoProps> = ({ name, stars, committedDate, languages, description, isEmpty }) => {
+  const navigate = useNavigate();
   return (
     <div className={styles.root}>
       <div>
         <h1>{name}</h1>
-        <p>{description || 'Нет описания'}</p>
+        <p>{description || isEmpty ? 'Пустой репозиторий' : 'Нет описания'}</p>
       </div>
       <div className={styles.starsWrapper}>
         <span>{`${stars}⭐`}</span>
@@ -23,6 +27,10 @@ const RepositoryInfo: FC<RepositoryInfoProps> = ({ name, stars, committedDate, l
         </div>
       </div>
       <p>{`Последний коммит: ${dayjs(committedDate).format('DD/MM/YYYY HH:mm')}`}</p>
+
+      <Button theme="transparent" handleClick={() => navigate(-1)}>
+        К списку репозиториев
+      </Button>
     </div>
   );
 };

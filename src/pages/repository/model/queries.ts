@@ -26,6 +26,7 @@ export const GET_REPOSITORIY = gql`
           }
         }
         description
+        isEmpty
       }
     }
   }

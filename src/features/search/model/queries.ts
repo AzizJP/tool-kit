@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 export const SEARCH_REPOSITORIES = gql`
-  query ($searchTerm: String!, $after: String) {
-    search(query: $searchTerm, type: REPOSITORY, first: 10, after: $after) {
+  query ($searchTerm: String!, $after: String, $first: Int) {
+    search(query: $searchTerm, type: REPOSITORY, first: $first, after: $after) {
       edges {
         node {
           ... on Repository {
@@ -33,9 +33,9 @@ export const SEARCH_REPOSITORIES = gql`
 `;
 
 export const GET_USER_REPOSITORIES = gql`
-  query GetUserRepositories($after: String) {
+  query GetUserRepositories($after: String, $first: Int) {
     viewer {
-      repositories(last: 10, after: $after, privacy: PUBLIC) {
+      repositories(first: $first, after: $after, privacy: PUBLIC) {
         edges {
           node {
             id
