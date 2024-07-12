@@ -8,6 +8,10 @@
   cursor: pointer;
 }
 
+.none {
+  border: none;
+}
+
 .transparent {
   border: none;
   background-color: transparent;
@@ -18,5 +22,27 @@
     @media screen and (min-width: breakpoints.$desktop) {
       color: var(--text-primary);
     }
+  }
+}
+
+.pagination {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+
+  background-color: var(--color-pagination);
+  color: var(--text-primary);
+
+  transition: transform ease var(--transition-time);
+
+  &:hover {
+    @media screen and (min-width: breakpoints.$desktop) {
+      transform: scale(1.1);
+    }
+  }
+
+  &_active {
+    background-color: var(--color-pagination-active);
+    transform: scale(1.2);
   }
 }

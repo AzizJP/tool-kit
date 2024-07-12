@@ -6,13 +6,18 @@ interface ButtonProps {
   children: string;
   handleClick: MouseEventHandler;
   disabled?: boolean;
-  theme?: 'transparent';
+  theme?: 'transparent' | 'none';
   className?: string;
+  isAtcive?: boolean;
 }
 
-const Button: FC<ButtonProps> = ({ children, handleClick, disabled = false, theme = 'transparent', className }) => {
+const Button: FC<ButtonProps> = ({ children, handleClick, disabled = false, theme = 'none', className, isAtcive = false }) => {
   return (
-    <button className={`${styles.root} ${styles[theme]} ${className ? styles[className] : ''}`} onClick={handleClick} disabled={disabled}>
+    <button
+      className={`${styles.root} ${styles[theme]} ${className ? styles[className] : ''} ${isAtcive ? styles[`${className}_active`] : ''}`}
+      onClick={handleClick}
+      disabled={disabled}
+    >
       {children}
     </button>
   );
